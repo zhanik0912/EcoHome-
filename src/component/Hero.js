@@ -10,7 +10,7 @@ const Hero = () => {
       alignItems: 'center',
       textAlign: 'center',
       color: 'white',
-      // Ссылка на твою предыдущую картинку (уютный интерьер)
+  
       background: 'linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat'
     }}>
       <h1 style={{ 

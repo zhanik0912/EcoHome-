@@ -7,7 +7,6 @@ const HouseDetail = ({ houses }) => {
 
   if (!house) return <div style={{ padding: '100px', textAlign: 'center' }}>Үй табылмады...</div>;
 
-  // Превращаем строку ссылок из базы обратно в массив
   const galleryImages = house.gallery ? house.gallery.split(',') : [];
 
   return (
@@ -16,12 +15,11 @@ const HouseDetail = ({ houses }) => {
       
       <div style={{ display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '40px', marginTop: '20px' }}>
         
-        {/* ЛЕВАЯ ЧАСТЬ: МЕДИА */}
         <div>
-          {/* Главное фото */}
+
           <img src={house.image_url || house.image} alt="Main" style={{ width: '100%', borderRadius: '15px', marginBottom: '15px' }} />
           
-          {/* Галлерея доп. фото */}
+
           {galleryImages.length > 0 && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(150px, 1fr))', gap: '10px' }}>
               {galleryImages.map((img, index) => (
@@ -30,7 +28,7 @@ const HouseDetail = ({ houses }) => {
             </div>
           )}
 
-          {/* Видео */}
+
           {house.video_url && (
             <div style={{ marginTop: '20px' }}>
               <h3>Видео шолу:</h3>
@@ -47,7 +45,6 @@ const HouseDetail = ({ houses }) => {
           )}
         </div>
 
-        {/* ПРАВАЯ ЧАСТЬ: ИНФО */}
         <div>
           <h1 style={{ fontSize: '32px' }}>{house.location}</h1>
           <p style={{ color: '#b01d76', fontSize: '24px', fontWeight: 'bold' }}>{house.price} ₸</p>
